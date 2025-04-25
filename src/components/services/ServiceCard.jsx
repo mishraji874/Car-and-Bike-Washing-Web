@@ -4,8 +4,12 @@ import { useNavigate } from 'react-router-dom';
 const ServiceCard = ({ service }) => {
   const navigate = useNavigate();
 
+  // const handleBookNow = () => {
+  //   navigate('/book-service', { state: { service } });
+  // };
+
   const handleBookNow = () => {
-    navigate('/book-service', { state: { service } });
+    navigate('/book-service');
   };
 
   return (

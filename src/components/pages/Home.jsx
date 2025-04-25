@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
@@ -81,24 +82,24 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">Our Services</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-lg shadow-lg p-6">
+            <Link to="/services/car-wash" className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
               <h3 className="text-xl font-semibold mb-4">Car Wash Services</h3>
               <p className="text-gray-600">
                 From basic wash to premium detailing, we offer comprehensive car cleaning services.
               </p>
-            </div>
-            <div className="bg-white rounded-lg shadow-lg p-6">
+            </Link>
+            <Link to="/services/bike-wash" className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
               <h3 className="text-xl font-semibold mb-4">Bike Wash Services</h3>
               <p className="text-gray-600">
                 Keep your bike spotless with our specialized bike washing and maintenance services.
               </p>
-            </div>
-            <div className="bg-white rounded-lg shadow-lg p-6">
+            </Link>
+            <Link to="/services/detailing" className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
               <h3 className="text-xl font-semibold mb-4">Detailing Services</h3>
               <p className="text-gray-600">
                 Professional detailing services to restore your vehicle's showroom shine.
               </p>
-            </div>
+            </Link>
           </div>
         </div>
       </section>
@@ -147,9 +148,11 @@ const Home = () => {
           <p className="text-white text-xl mb-8">
             Book your appointment now and get 10% off on your first service!
           </p>
+          <Link to="/book-service">
           <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
             Book Now
           </button>
+          </Link>
         </div>
       </section>
     </div>

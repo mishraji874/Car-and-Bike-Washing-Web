@@ -87,7 +87,7 @@ const Footer = () => {
         </div>
         <div className="mt-8 border-t border-gray-700 pt-8">
           <p className="text-base text-gray-400 xl:text-center">
-            &copy; 2024 Car & Bike Wash. All rights reserved.
+            &copy; 2025 Car & Bike Wash. All rights reserved.
           </p>
         </div>
       </div>
