@@ -57,10 +57,10 @@ const ServiceDetail = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl font-bold text-center mb-12">{service.title}</h1>
-          
+
           <div className="space-y-6">
             <p className="text-lg text-gray-600">{service.description}</p>
-            
+
             <div className="space-y-4">
               {service.packages.map((pkg, index) => (
                 <div key={index} className="bg-white p-6 rounded-lg shadow-md">

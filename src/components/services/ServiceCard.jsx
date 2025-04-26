@@ -14,8 +14,8 @@ const ServiceCard = ({ service }) => {
 
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden">
-      <img 
-        src={service.image} 
+      <img
+        src={service.image}
         alt={service.title}
         className="w-full h-48 object-cover"
       />

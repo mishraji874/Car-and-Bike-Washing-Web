@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import { paymentService } from '../../services/api';
 
 const BookingForm = () => {
   const location = useLocation();
   const service = location.state?.service;
   const [step, setStep] = useState(1);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   const formik = useFormik({
     initialValues: {
@@ -18,7 +22,9 @@ const BookingForm = () => {
       address: '',
       vehicleType: '',
       vehicleNumber: '',
-      specialInstructions: ''
+      specialInstructions: '',
+      serviceType: service?.title || '',
+      paymentAmount: service?.price || 0
     },
     validationSchema: Yup.object({
       name: Yup.string().required('Required'),
@@ -28,17 +34,42 @@ const BookingForm = () => {
       time: Yup.string().required('Required'),
       address: Yup.string().required('Required'),
       vehicleType: Yup.string().required('Required'),
-      vehicleNumber: Yup.string().required('Required')
+      vehicleNumber: Yup.string().required('Required'),
+      serviceType: Yup.string().required('Required'),
+      paymentAmount: Yup.number().required('Required').min(0)
     }),
-    onSubmit: (values) => {
-      // Handle form submission
-      console.log(values);
+    onSubmit: async (values) => {
+      setIsLoading(true);
+      setError(null);
+      try {
+        const paymentResult = await paymentService.confirmPayment({
+          amount: values.paymentAmount
+        });
+
+        if (paymentResult.success) {
+          navigate('/booking-success', {
+            state: {
+              booking: values,
+              payment: paymentResult
+            }
+          });
+        }
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setIsLoading(false);
+      }
     }
   });
 
   return (
     <div className="max-w-2xl mx-auto">
       <h2 className="text-2xl font-bold mb-6">Book {service?.title}</h2>
+      {error && (
+        <div className="mb-4 p-4 bg-red-100 border border-red-400 text-red-700 rounded">
+          {error}
+        </div>
+      )}
       <form onSubmit={formik.handleSubmit} className="space-y-6">
         {step === 1 && (
           <div className="space-y-4">
@@ -130,6 +161,13 @@ const BookingForm = () => {
               >
                 Book Now
               </button>
+            </div>
+          </div>
+        )}
+        {isLoading && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+            <div className="bg-white p-8 rounded-lg">
+              Processing payment...
             </div>
           </div>
         )}

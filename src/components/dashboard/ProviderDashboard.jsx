@@ -61,21 +61,19 @@ const ProviderDashboard = () => {
         <nav className="-mb-px flex space-x-8">
           <button
             onClick={() => setActiveTab('current')}
-            className={`${
-              activeTab === 'current'
+            className={`${activeTab === 'current'
                 ? 'border-blue-500 text-blue-600'
                 : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-            } whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm`}
+              } whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm`}
           >
             Current Jobs
           </button>
           <button
             onClick={() => setActiveTab('completed')}
-            className={`${
-              activeTab === 'completed'
+            className={`${activeTab === 'completed'
                 ? 'border-blue-500 text-blue-600'
                 : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-            } whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm`}
+              } whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm`}
           >
             Completed Jobs
           </button>

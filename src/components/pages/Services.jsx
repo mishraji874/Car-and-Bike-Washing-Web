@@ -75,14 +75,14 @@ const Services = () => {
     <div className="min-h-screen py-16 bg-gray-50">
       <div className="container mx-auto px-4">
         <h1 className="text-4xl font-bold text-center mb-12">Our Services</h1>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden">
               <div className="p-6">
                 <h2 className="text-2xl font-semibold mb-4">{service.title}</h2>
                 <p className="text-gray-600 mb-6">{service.description}</p>
-                
+
                 {service.packages.map((pkg, pkgIndex) => (
                   <div key={pkgIndex} className="mb-6 p-4 border rounded-lg">
                     <h3 className="text-xl font-semibold mb-2">{pkg.name}</h3>
@@ -111,7 +111,7 @@ const Services = () => {
                     </ul>
                   </div>
                 ))}
-                
+
                 <Link
                   to={service.link}
                   className="block w-full text-center bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors"

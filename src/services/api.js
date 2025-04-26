@@ -83,3 +83,23 @@ export const userService = {
     }
   }
 };
+
+export const paymentService = {
+  confirmPayment: async (paymentData) => {
+    try {
+      // Simulate payment confirmation with a 2-second delay
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      
+      // Here you would typically call your payment gateway API
+      // For now, we'll just return a success response
+      return {
+        success: true,
+        transactionId: `txn_${Math.random().toString(36).substr(2, 9)}`,
+        amount: paymentData.amount,
+        currency: 'USD'
+      };
+    } catch (error) {
+      throw new Error('Payment confirmation failed: ' + error.message);
+    }
+  }
+};

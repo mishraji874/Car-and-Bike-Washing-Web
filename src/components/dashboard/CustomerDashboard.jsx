@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext';
 
 const CustomerDashboard = () => {
+  const { currentUser } = useAuth();
   const bookings = [
     {
       id: 1,
@@ -21,12 +23,29 @@ const CustomerDashboard = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <div className="md:flex md:items-center md:justify-between">
-        <div className="flex-1 min-w-0">
-          <h2 className="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">
-            Welcome back, John!
-          </h2>
+      {/* User Information Section */}
+      <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
+        <div className="flex items-center space-x-6">
+          <div className="w-20 h-20 rounded-full bg-blue-100 flex items-center justify-center">
+            <span className="text-3xl text-blue-600">
+              {currentUser?.name?.charAt(0).toUpperCase()}
+            </span>
+          </div>
+          <div>
+            <h2 className="text-2xl font-bold text-gray-900">
+              Welcome back, {currentUser?.name || 'Customer'}!
+            </h2>
+            <div className="mt-2 space-y-1 text-gray-600">
+              <p>Email: {currentUser?.email}</p>
+              <p>Phone: {currentUser?.phone}</p>
+            </div>
+          </div>
         </div>
+      </div>
+
+      {/* Bookings Section */}
+      <div className="md:flex md:items-center md:justify-between mb-6">
+        <h3 className="text-xl font-semibold text-gray-900">Your Bookings</h3>
         <div className="mt-4 flex md:mt-0 md:ml-4">
           <Link
             to="/book-service"
@@ -70,9 +89,8 @@ const CustomerDashboard = () => {
                     {booking.time}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
-                      booking.status === 'Completed' ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'
-                    }`}>
+                    <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${booking.status === 'Completed' ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'
+                      }`}>
                       {booking.status}
                     </span>
                   </td>

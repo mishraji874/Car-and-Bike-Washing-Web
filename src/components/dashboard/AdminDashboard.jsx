@@ -58,21 +58,19 @@ const AdminDashboard = () => {
         <nav className="-mb-px flex space-x-8">
           <button
             onClick={() => setActiveTab('bookings')}
-            className={`${
-              activeTab === 'bookings'
+            className={`${activeTab === 'bookings'
                 ? 'border-blue-500 text-blue-600'
                 : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-            } whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm`}
+              } whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm`}
           >
             Bookings
           </button>
           <button
             onClick={() => setActiveTab('providers')}
-            className={`${
-              activeTab === 'providers'
+            className={`${activeTab === 'providers'
                 ? 'border-blue-500 text-blue-600'
                 : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-            } whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm`}
+              } whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm`}
           >
             Service Providers
           </button>
@@ -120,11 +118,10 @@ const AdminDashboard = () => {
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                       <span
-                        className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
-                          booking.status === 'Completed'
+                        className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${booking.status === 'Completed'
                             ? 'bg-green-100 text-green-800'
                             : 'bg-yellow-100 text-yellow-800'
-                        }`}
+                          }`}
                       >
                         {booking.status}
                       </span>

@@ -29,7 +29,7 @@ const Contact = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl font-bold text-center mb-12">Contact Us</h1>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
               <h2 className="text-2xl font-semibold mb-6">Get in Touch</h2>
@@ -59,7 +59,7 @@ const Contact = () => {
                     <p className="text-gray-600">123 Washing Street, City, Country</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start">
                   <svg
                     className="w-6 h-6 text-blue-600 mt-1 mr-4"
@@ -79,7 +79,7 @@ const Contact = () => {
                     <p className="text-gray-600">+1 234 567 890</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start">
                   <svg
                     className="w-6 h-6 text-blue-600 mt-1 mr-4"
@@ -101,7 +101,7 @@ const Contact = () => {
                 </div>
               </div>
             </div>
-            
+
             <div>
               <h2 className="text-2xl font-semibold mb-6">Send us a Message</h2>
               <form onSubmit={formik.handleSubmit} className="space-y-4">
@@ -117,7 +117,7 @@ const Contact = () => {
                     <div className="text-red-500 text-sm mt-1">{formik.errors.name}</div>
                   )}
                 </div>
-                
+
                 <div>
                   <input
                     type="email"
@@ -130,7 +130,7 @@ const Contact = () => {
                     <div className="text-red-500 text-sm mt-1">{formik.errors.email}</div>
                   )}
                 </div>
-                
+
                 <div>
                   <input
                     type="tel"
@@ -143,7 +143,7 @@ const Contact = () => {
                     <div className="text-red-500 text-sm mt-1">{formik.errors.phone}</div>
                   )}
                 </div>
-                
+
                 <div>
                   <input
                     type="text"
@@ -156,7 +156,7 @@ const Contact = () => {
                     <div className="text-red-500 text-sm mt-1">{formik.errors.subject}</div>
                   )}
                 </div>
-                
+
                 <div>
                   <textarea
                     name="message"
@@ -169,7 +169,7 @@ const Contact = () => {
                     <div className="text-red-500 text-sm mt-1">{formik.errors.message}</div>
                   )}
                 </div>
-                
+
                 <button
                   type="submit"
                   className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors"
