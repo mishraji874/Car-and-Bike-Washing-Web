@@ -1,70 +1,94 @@
-# Getting Started with Create React App
+# WashOnWheels - Professional Car & Bike Washing Services
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![WashOnWheels Logo](/public/images/logo.png)
+
+WashOnWheels is a modern web application that provides professional car and bike washing services. Our platform allows users to easily book, manage, and track their vehicle cleaning services online.
+
+## Features
+
+- 🚗 **Car & Bike Washing Services**
+- 📅 **Online Booking System**
+- 📍 **Location-based Service**
+- 💳 **Secure Payment Integration**
+- 📱 **Responsive Design**
+- 🔐 **User Authentication**
+- 📊 **Dashboard for Service Tracking**
+
+## Technologies Used
+
+- **Frontend**: React.js, React Router, Formik, Yup
+- **Styling**: Tailwind CSS, Heroicons
+- **Authentication**: Firebase
+- **Payment**: Stripe
+- **State Management**: React Context API
+- **Testing**: Jest, React Testing Library
+
+## Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/mishraji874/Car-and-Bike-Washing-Web.git
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Set up environment variables:
+
+Create a .env file in the root directory and add your Firebase and Stripe credentials:
+```bash
+MONGODB_URI=your_monngodb_uri
+JWT_SECRET=your_jwt_secret
+STRIPE_PUBLISHABLE_KEY=your_stripe_publishable_key
+```
+
+4. Start the development server:
+```bash
+npm start
+```
+
+## Project Structure
+
+```plaintext
+car-and-bike-washing-web/
+├── public/              # Static assets
+├── src/
+│   ├── components/      # React components
+│   ├── context/         # Context providers
+│   ├── pages/           # Page components
+│   ├── services/        # API services
+│   ├── App.js           # Main application component
+│   └── index.js         # Entry point
+├── .env                 # Environment variables
+├── package.json         # Project dependencies
+└── README.md            # Project documentation
+```
 
 ## Available Scripts
-
 In the project directory, you can run:
 
-### `npm start`
+```bash
+npm start
+```
+Runs the app in development mode. Open http://localhost:3000 to view it in your browser.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```bash
+npm test
+```
+Launches the test runner in interactive watch mode.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```bash
+npm run build
+```
+Builds the app for production to the build folder.
 
-### `npm test`
+## Contact
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+For any inquiries, please contact us at developer.adityamsr@gmail.com
 
-### `npm run build`
+```plaintext
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This README provides a comprehensive overview of your project, including installation instructions, features, and project structure. It's professional and informative for both users and developers. Let me know if you'd like to add or modify anything!
+```
