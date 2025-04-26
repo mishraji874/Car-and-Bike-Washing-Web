@@ -89,6 +89,5 @@ Builds the app for production to the build folder.
 For any inquiries, please contact us at developer.adityamsr@gmail.com
 
 ```plaintext
-
 This README provides a comprehensive overview of your project, including installation instructions, features, and project structure. It's professional and informative for both users and developers. Let me know if you'd like to add or modify anything!
 ```
